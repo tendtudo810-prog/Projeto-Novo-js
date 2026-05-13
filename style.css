@@ -1,0 +1,97 @@
+:root {
+    --cor-primaria: #f0f0f0;
+    --cor-secundaria: #333333;
+    --cor-erro: #ff6600;
+}
+
+body {
+    background-color: rgb(22, 27, 94);
+}
+
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+.title {
+    text-align: center;
+    color: var(--cor-primaria);
+    margin-top: 15vh;
+}
+
+.nome {
+    text-align: center;
+    margin-top: 20vh;
+}
+
+.label {
+    margin-top: -3vh;
+    position: absolute;
+    color: var(--cor-primaria);
+}
+
+#nome {
+    width: 20%;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.senha {
+    text-align: center;
+    margin-top: 6vh;
+}
+
+.label-1 {
+    margin-top: -3vh;
+    position: absolute;
+    color: var(--cor-primaria);
+}
+
+#senha {
+    width: 20%;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.idade {
+    text-align: center;
+    margin-top: 6vh;
+}
+
+.label-2 {
+    margin-top: -3vh;
+    position: absolute;
+    color: var(--cor-primaria);
+}
+
+#idade {
+    width: 20%;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.botao {
+    text-align: center;
+    margin-top: 10vh;
+}
+
+#btn {
+    padding: 20px;
+    width: 20%;
+    border-radius: 8px;
+    font-size: 20px;
+    background-color: #2191FB;
+    color: var(--cor-primaria);
+    border: 2px solid #2191FB;
+}
+
+.caixa {
+    margin-left: 34vw;
+    border: 2px solid rgb(30, 36, 117);
+    background-color: rgb(30, 36, 117);
+    border-radius: 10px;
+    margin-top: -55vh;
+    padding-top: 650px;
+    width: 30%;
+    pointer-events: none;
+}
+
