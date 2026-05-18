@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: rgb(22, 27, 94);
+    background-image: url(image/blurry-image-green-background-with-blurry-background.jpg);
 }
 
 * {
@@ -43,7 +43,7 @@ body {
 .label-1 {
     margin-top: -3vh;
     position: absolute;
-    color: var(--cor-primaria);
+    color: var(--cor-secundaria);
 }
 
 #senha {
@@ -86,8 +86,8 @@ body {
 
 .caixa {
     margin-left: 34vw;
-    border: 2px solid rgb(30, 36, 117);
-    background-color: rgb(30, 36, 117);
+    border: 2px solid var(--cor-primaria);
+    background-color: var(--cor-primaria);
     border-radius: 10px;
     margin-top: -55vh;
     padding-top: 650px;
