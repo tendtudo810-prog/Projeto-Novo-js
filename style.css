@@ -24,12 +24,6 @@ body {
     margin-top: 20vh;
 }
 
-.label {
-    margin-top: -3vh;
-    position: absolute;
-    color: var(--cor-primaria);
-}
-
 #nome {
     width: 20%;
     padding: 10px;
@@ -42,12 +36,6 @@ body {
 .senha {
     text-align: center;
     margin-top: 6vh;
-}
-
-.label-1 {
-    margin-top: -3vh;
-    position: absolute;
-    color: var(--cor-primaria);
 }
 
 #senha {
@@ -64,12 +52,6 @@ body {
     margin-top: 6vh;
 }
 
-.label-2 {
-    margin-top: -3vh;
-    position: absolute;
-    color: var(--cor-primaria);
-}
-
 #idade {
     width: 20%;
     padding: 10px;
@@ -81,28 +63,63 @@ body {
 
 .botao {
     text-align: center;
-    margin-top: 10vh;
+    margin-top: 8vh;
 }
 
 #btn {
-    padding: 20px;
+    padding: 14px 20px;
     width: 20%;
     border-radius: 8px;
-    font-size: 20px;
+    font-size: 18px;
     background-color: #08872c;
     color: var(--cor-primaria);
     border: 2px solid #08872c;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.caixa {
-    margin-left: 34vw;
-    border: 1px solid var(--preto);
-    background-color: var(--preto);
-    border-radius: 10px;
-    margin-top: -55vh;
-    padding-top: 650px;
-    width: 30%;
-    pointer-events: none;
+#btn:hover {
+    background-color: #067a25;
+    box-shadow: 0 4px 10px rgba(8, 135, 44, 0.3);
 }
 
+.caixa .error-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(90deg, rgba(255,102,0,0.95), rgba(255,80,60,0.95));
+    color: #fff;
+    padding: 14px 16px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+    margin: 5vh auto;
+    width: fit-content;
+    font-size: 15px;
+    font-weight: 500;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.caixa .error-box .error-close {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 6px;
+}
+
+.caixa .error-box .error-close:focus {
+    outline: 2px solid rgba(255,255,255,0.25);
+}

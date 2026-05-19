@@ -1,32 +1,43 @@
-//banco de dados
-const nomeUsuario1 = "user1@gmail.com"
-const senhaUsuario1 = "123456"
-const nomeUsuario2 = "user2@gmail.com"
-const senhaUsuario2 = "123456"
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('form-login');
+    const idade = document.getElementById('idade');
+    const nome = document.getElementById('nome');
+    const senha = document.getElementById('senha');
+    const caixa = document.querySelector('.caixa');
 
-//Capturar o formulário
-document.getElementById("form-login").addEventListener("submit", function(e) {
-    e.preventDefault();
-    
-    //Obter valores dos inputs
-    let nomeDigitado = document.getElementById("nome").value;
-    let senhaDigitada = document.getElementById("senha").value;
-    let idade = parseInt(document.getElementById("idade").value);
-    
-    //Verificação de idade
-    if(idade < 18) {
-        alert("Você não tem a idade mínima necessária para entrar neste site!");
-        document.body.classList.add("acesso-negado");
-        return;
+    function clearError() {
+        if (!caixa) return;
+        caixa.innerHTML = '';
     }
-    
-    //Verificação de login 
-    if(nomeDigitado === nomeUsuario1 && senhaDigitada === senhaUsuario1) {
-        alert("Login bem-sucedido! Bem-vindo, " + nomeUsuario1 + "!");
-    } else if(nomeDigitado === nomeUsuario2 && senhaDigitada === senhaUsuario2) {
-        alert("Login bem-sucedido! Bem-vindo, " + nomeUsuario2 + "!");
-    } else {
-        alert("Login falhou! Email ou senha incorretos.");
-        document.body.classList.add("acesso-negado");
+
+    function showError(message) {
+        if (!caixa) return;
+        clearError();
+        const box = document.createElement('div');
+        box.className = 'error-box';
+        box.innerHTML = `
+            <div class="error-content">${message}</div>
+            <button type="button" class="error-close" aria-label="Fechar">×</button>
+        `;
+        caixa.appendChild(box);
+        const btn = box.querySelector('.error-close');
+        btn.addEventListener('click', clearError);
     }
+
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+        const age = parseInt(idade.value, 10);
+
+        clearError();
+
+        if (isNaN(age) || age < 18) {
+            e.preventDefault();
+            showError('Você precisa ter 18 anos ou mais para entrar.');
+            return;
+        }
+
+        // Idade válida — limpar mensagem e permitir envio
+        clearError();
+    });
 });
