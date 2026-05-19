@@ -2,6 +2,7 @@
     --cor-primaria: #f0f0f0;
     --cor-secundaria: #333333;
     --cor-erro: #ff6600;
+    --preto: #111d136c;
 }
 
 body {
@@ -33,6 +34,9 @@ body {
     width: 20%;
     padding: 10px;
     border-radius: 8px;
+    background-color: var(--preto);
+    color: var(--cor-primaria);
+    border: 2px solid var(--preto);
 }
 
 .senha {
@@ -43,13 +47,16 @@ body {
 .label-1 {
     margin-top: -3vh;
     position: absolute;
-    color: var(--cor-secundaria);
+    color: var(--cor-primaria);
 }
 
 #senha {
     width: 20%;
     padding: 10px;
     border-radius: 8px;
+    background-color: var(--preto);
+    color: var(--cor-primaria);
+    border: 2px solid var(--preto);
 }
 
 .idade {
@@ -67,6 +74,9 @@ body {
     width: 20%;
     padding: 10px;
     border-radius: 8px;
+    background-color: var(--preto);
+    color: var(--cor-primaria);
+    border: 2px solid var(--preto);
 }
 
 .botao {
@@ -79,15 +89,16 @@ body {
     width: 20%;
     border-radius: 8px;
     font-size: 20px;
-    background-color: #2191FB;
+    background-color: #08872c;
     color: var(--cor-primaria);
-    border: 2px solid #2191FB;
+    border: 2px solid #08872c;
+    cursor: pointer;
 }
 
 .caixa {
     margin-left: 34vw;
-    border: 2px solid var(--cor-primaria);
-    background-color: var(--cor-primaria);
+    border: 1px solid var(--preto);
+    background-color: var(--preto);
     border-radius: 10px;
     margin-top: -55vh;
     padding-top: 650px;
