@@ -3,25 +3,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const idade = document.getElementById('idade');
     const nome = document.getElementById('nome');
     const senha = document.getElementById('senha');
-    const caixa = document.querySelector('.caixa');
 
-    function clearError() {
-        if (!caixa) return;
-        caixa.innerHTML = '';
+    function clearInputErrors() {
+        nome.classList.remove('erro');
+        senha.classList.remove('erro');
+        idade.classList.remove('erro');
+        
+        nome.placeholder = 'Adicione seu nome';
+        senha.placeholder = 'Adicione sua senha';
+        idade.placeholder = 'Adicione sua idade';
     }
 
-    function showError(message) {
-        if (!caixa) return;
-        clearError();
-        const box = document.createElement('div');
-        box.className = 'error-box';
-        box.innerHTML = `
-            <div class="error-content">${message}</div>
-            <button type="button" class="error-close" aria-label="Fechar">×</button>
-        `;
-        caixa.appendChild(box);
-        const btn = box.querySelector('.error-close');
-        btn.addEventListener('click', clearError);
+    function showInputErrors() {
+        nome.value = '';
+        senha.value = '';
+        idade.value = '';
+        
+        nome.classList.add('erro');
+        senha.classList.add('erro');
+        idade.classList.add('erro');
+        
+        nome.placeholder = '❌ Nome inválido';
+        senha.placeholder = '❌ Senha inválida';
+        idade.placeholder = '❌ Menor de 18 anos';
+        
+        nome.focus();
     }
 
     if (!form) return;
@@ -29,15 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', (e) => {
         const age = parseInt(idade.value, 10);
 
-        clearError();
-
         if (isNaN(age) || age < 18) {
             e.preventDefault();
-            showError('Você precisa ter 18 anos ou mais para entrar.');
+            showInputErrors();
             return;
         }
 
-        // Idade válida — limpar mensagem e permitir envio
-        clearError();
+        // Idade válida — limpar erros e permitir envio
+        clearInputErrors();
     });
 });

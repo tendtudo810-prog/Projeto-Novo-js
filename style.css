@@ -13,15 +13,22 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
+.fa-mizuni {
+    font-size: 50px;
+    margin-left: 48vw;
+    margin-top: -13vh;
+    position: absolute;
+}
+
 .title {
     text-align: center;
     color: var(--cor-primaria);
-    margin-top: 15vh;
+    margin-top: 25vh;
 }
 
 .nome {
     text-align: center;
-    margin-top: 20vh;
+    margin-top: 10vh;
 }
 
 #nome {
@@ -61,6 +68,35 @@ body {
     border: 2px solid var(--preto);
 }
 
+/* Estilos para inputs com erro */
+#nome.erro,
+#senha.erro,
+#idade.erro {
+    border: 2.5px solid #ff4757;
+    background-color: rgba(255, 71, 87, 0.08);
+    box-shadow: 0 0 0 3px rgba(255, 71, 87, 0.1), inset 0 0 8px rgba(255, 71, 87, 0.05);
+    animation: shake 0.3s ease-in-out;
+}
+
+#nome.erro::placeholder,
+#senha.erro::placeholder,
+#idade.erro::placeholder {
+    color: #ff6666;
+    font-weight: 500;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+}
+
 .botao {
     text-align: center;
     margin-top: 8vh;
@@ -75,12 +111,14 @@ body {
     color: var(--cor-primaria);
     border: 2px solid #08872c;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: 0.7s;
 }
 
 #btn:hover {
     background-color: #067a25;
     box-shadow: 0 4px 10px rgba(8, 135, 44, 0.3);
+    transform: scale(1.1);
+    transition: 0.7s;
 }
 
 .caixa .error-box {
@@ -122,4 +160,109 @@ body {
 
 .caixa .error-box .error-close:focus {
     outline: 2px solid rgba(255,255,255,0.25);
+}
+
+.linha {
+    gap: 60px;
+    display: flex;
+    margin-left: 40vw;
+    margin-top: 8vh;
+}
+
+.text {
+    color: white;
+    margin-top: -1vh;
+}
+
+.line {
+    width: 10%;
+    height: 10%;
+}
+
+.box {
+    text-align: center;
+    margin-top: 5vh;
+    z-index: 10;
+}
+
+.box1 {
+    text-align: center;
+    margin-top: 8vh;
+    z-index: 10;
+}
+
+.box2 {
+    text-align: center;
+    margin-top: 8vh;
+    z-index: 10;
+    margin-bottom: 10vh;
+}
+
+.number {
+    background-color: #0d242481;
+    border-radius: 10px;
+    border: 2px solid #0d242481;
+    color: white;
+    font-size: 20px;
+    padding: 20px 70px;
+    text-decoration: none;
+    transition: 0.7s;
+}
+
+.number i {
+    transform: scale(1.3);
+    margin-left: 0.4vw;
+}
+
+.number:hover {
+    padding: 25px 75px;
+    background-color: #146d2c;
+    border: 2px solid #0d242481;
+    transition: 0.7s;
+}
+
+.maca {
+    background-color: #0d242481;
+    border-radius: 10px;
+    border: 2px solid #0d242481;
+    color: white;
+    padding: 20px 70px;
+    font-size: 20px;
+    text-decoration: none;
+    transition: 0.7s;
+}
+
+.maca i {
+    transform: scale(1.3);
+    margin-left: 0.4vw;
+}
+
+.maca:hover {
+    padding: 25px 75px;
+    background-color: #146d2c;
+    border: 2px solid #0d242481;
+    transition: 0.7s;
+}
+
+.cara-livro {
+    background-color: #0d242481;
+    border-radius: 10px;
+    border: 2px solid #0d242481;
+    color: white;
+    padding: 20px 70px;
+    font-size: 20px;
+    text-decoration: none;
+    transition: 0.7s;
+}
+
+.cara-livro i {
+    transform: scale(1.3);
+    margin-left: 0.4vw;
+}
+
+.cara-livro:hover {
+    padding: 25px 75px;
+    background-color: #146d2c;
+    border: 2px solid #0d242481;
+    transition: 0.7s;
 }
